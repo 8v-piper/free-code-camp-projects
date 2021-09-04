@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    background: -o-linear-gradient(
+        left, 
+        hsla(290, 100%, 50%, 0.7), 
+        hsla(184, 100%, 60%, 0.829), 
+        hsla(261, 100%, 50%, 0.7)
+      );
+      background: linear-gradient(
+        to right, 
+        hsla(290, 100%, 50%, 0.7), 
+        hsla(330, 100%, 60%, 0.75), 
+        hsla(30, 100%, 50%, 0.7)
+      );
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.header {
+    max-width: 600px;
+    text-align: center;
+    color: black;
+    border-style: solid;
+}
+
+#title {
+    color: black;
+}
+
+#description{
+    color: blue;
+}
+
+#survey-form {
+    grid-column: 2/3;
+    max-width: 600px;
+    text-align: left;
+    border-style: solid;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    padding: 0.2rem;
+}
+
+#name-label {
+    font-size: 1.25rem;
+}
+
+#name {
+
+}
+
+#email-label {
+    font-size: 1.25rem;
+}
+
+#email {
+
+}
+
+#number-label {
+    font-size: 1.25rem;
+}
+
+#number {
+
+}
+
+#dropdown {
+
+}
+
+.input-radio {
+    font-size: 1.25rem;
+}
+
+.checkbox {
+    font-size: 1.25rem;
+}
+
+.input-checkbox {
+    font-size: 1.25rem;
+}
+
+#comments {
+
+}
+
+#submit {
+
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.25rem;
+}
