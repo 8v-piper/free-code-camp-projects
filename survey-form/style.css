@@ -1,112 +1,155 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400,600,800&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+
+
+body {
     box-sizing: border-box;
-;
-}
-
-
-main {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    background: -o-linear-gradient(
-        left, 
-        hsla(290, 100%, 50%, 0.7), 
-        hsla(184, 100%, 60%, 0.829), 
-        hsla(261, 100%, 50%, 0.7)
-      );
-      background: linear-gradient(
-        to right, 
-        hsla(290, 100%, 50%, 0.7), 
-        hsla(330, 100%, 60%, 0.75), 
-        hsla(30, 100%, 50%, 0.7)
-      );
+    display:flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0 2em;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
 }
-.header {
-    max-width: 600px;
-    text-align: center;
-    color: black;
-    border-style: solid;
+
+form {
+    display: block;
+    box-sizing: border-box;
+    min-width: 600px;
+    max-width: 80%;
+    margin: 1.5em 0;
+    color: #141414;
+    z-index: 100;
+    border-radius: 1em;
+    background: #ffffff;
+    box-shadow: inset 5px 5px 19px #e0e0e0,
+    inset -5px -5px 6px #e8e8e8;
 }
 
-#title {
-    color: black;
-}
+#particles-js{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; 
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    z-index: -10;
+    overflow: hidden;
 
-#description{
-    color: blue;
 }
-
-#survey-form {
-    grid-column: 2/3;
-    max-width: 600px;
-    text-align: left;
-    border-style: solid;
+p {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 .form-group {
-    margin-bottom: 1rem;
-    padding: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5em;
 }
 
-#name-label {
-    font-size: 1.25rem;
+.form-group {
+    align-self: flex-start;
+    margin-bottom: 1em;
 }
 
-#name {
-
+.form-group input {
+    max-width: 15em;
+    border-radius: 0.3em;
+    height: 2em;
+    padding-left: 0.5em;
 }
 
-#email-label {
-    font-size: 1.25rem;
+.header {
+    padding: 1em 1.5em 0.5em 1.5em;
+    text-align: center;
 }
 
-#email {
+#title  {
+    font-size: 2.5em;
+    font-weight: 800;
+    padding-bottom: 0;
+    margin-bottom: 0.2em;
+}
+
+#description{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+ #name-label {
+     font-size: 1.2em;
+     font-weight: 600;
+}
+
+ #email-label {
+    font-size: 1.2em;
+    font-weight: 600;
 
 }
 
 #number-label {
-    font-size: 1.25rem;
-}
-
-#number {
-
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 #dropdown {
-
+    width: 100%;
+    max-width: 15em;
+    border-radius: 0.3em;
+    height: 2em;
+    padding-left: 0.5em;
 }
 
-.input-radio {
-    font-size: 1.25rem;
+.clue {
+    margin-bottom: 1em;
 }
 
-.checkbox {
-    font-size: 1.25rem;
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+input.input-radio {
+    margin-right: 1em;
 }
 
 .input-checkbox {
-    font-size: 1.25rem;
+    padding: 5em;
+    margin: 0em 1em 0 0;
+
+}
+.input-textarea {
+    min-height: 10em;
+    width: 95%;
+    border-radius: 1em;
+    resize: verticle;
 }
 
-#comments {
-
+#comments::placeholder {
+    padding: 1em;
 }
 
 #submit {
-
+    border-radius: 1em;
+    border-width: 0;
+    margin-bottom: 1.5em;
+    width: 6em;
+    height: 3em;
+    color: #ffffff;
+    background-color: #4143e6;
 }
 
-h1 {
-    font-size: 2rem;
-}
-
-p {
-    font-size: 1.25rem;
+#submit:focus {
+    border-radius: 1em;
+    border-width: 0.2em;
+    border-color: #1317e7;
 }
