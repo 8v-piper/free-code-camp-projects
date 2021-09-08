@@ -51,9 +51,36 @@
     padding-left: 0.4rem;
 }
 
+.main-section {
+    margin-left: 1.25rem;
+}
+
+.main-section li {
+    margin-left: 2rem;
+}
 a {
     text-decoration: none;
     color: #4e4e4e;
+}
+
+h3 {
+    margin: 0.5rem 0rem 0.5rem 1rem;
+    margin-left: 0;
+    padding: 0.5rem 0rem;
+    font-size: 1.3rem;
+    color: red;
+}
+
+p { 
+    font-size: 1rem;
+    margin-left: 1rem;
+    line-height: 1.5rem;
+}
+
+code {
+    font-family: monospace;
+    color: #4e4e4e;
+    text-decoration: underline;
 }
 
 #main-doc {
