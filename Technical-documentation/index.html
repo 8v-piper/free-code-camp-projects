@@ -16,23 +16,23 @@
                 <h1>Angular Docs</h1>
             </header>
             <ul>
-                <li><a class="nav-link" href="#overview">Overview</a></li>
-                <li><a class="nav-link" href="#Common routing tasks">Common routing tasks</a></li>
-                <li><a class="nav-link" href="#Tutorial: Routing in single page application">Tutorial: Routing in single page application</a></li>
-                <li><a class="nav-link" href="#Tutorial: Creating custom route matches">Tutorial: Creating custom route matches</a></li>
-                <li><a class="nav-link" href="#Tutorial: Adding routing to Tour of Heroes">Tutorial: Adding routing to Tour of Heroes</a></li>
-                <li><a class="nav-link" href="#Router reference">Router reference</a></li>
+                <li><a class="nav-link" href="#Angular_Routing">Angular Routing</a></li>
+                <li><a class="nav-link" href="#Common_routing_tasks">Common routing tasks</a></li>
+                <li><a class="nav-link" href="#Defining_a_basic_route">Defining a basic route</a></li>
+                <li><a class="nav-link" href="#Route_Order">Route Order</a></li>
+                <li><a class="nav-link" href="#Getting_route_information">Getting route information</a></li>
+                <li><a class="nav-link" href="#Setting_up_wildcard_routes">Setting up wildcard routes</a></li>
             </ul>
         </nav>
         <main id="main-doc">
-            <section class="main-section">
-                <header id="angular-routing"><h3>Angular Routing</h3></header>
+            <section class="main-section" id="Angular_Routing">
+                <header><h3>Angular Routing</h3></header>
                 <P>
                     In a single-page app, you change what the user sees by showing or hiding portions of the display that correspond to particular components, rather than going out to the server to get a new page. As users perform application tasks, they need to move between the different views that you have defined.
                     To handle the navigation from one view to the next, you use the Angular Router. The Router enables navigation by interpreting a browser URL as an instruction to change the view.
                     To explore a sample app featuring the router's primary features, see the <a href="https://angular.io/generated/live-examples/router/stackblitz.html">live example</a>  / <a href="https://angular.io/generated/zips/router/router.zip">download example.</a> 
                 </P>
-                <h3>Prerequisites</h3>
+                <header>Prerequisites</header>
                 
                 <h3>Before creating a route, you should be familiar with the following:</h3>
                     <ul>
@@ -41,10 +41,8 @@
                         <li>Angular app—you can generate a basic Angular app using the Angular CLI.</li>
                     </ul>
             </section>
-            <section class="main-section">
-                <header id="common-routing-tasks">
-                    <h3>Common routing tasks</h3>
-                </header>
+            <section class="main-section" id="Common_routing_tasks">
+                <header>Common routing tasks</header>
                 <p>
                     This topic describes how to implement many of the common tasks associated with adding the Angular router to your application.
                 </p>
@@ -52,8 +50,10 @@
                 <p>
                     The following command uses the Angular CLI to generate a basic Angular application with an application routing module, called AppRoutingModule, which is an NgModule where you can configure your routes. The application name in the following example is routing-app.
                 </p>
-                <h3>content_copy</h3>
-                <code>ng new routing-app --routing</code>
+                
+                <div class="code">
+                    <code>ng new routing-app --routing</code>
+                </div>
                 <p>
                     When generating a new application, the CLI prompts you to select CSS or a CSS preprocessor. For this example, accept the default of CSS.
                 </p>
@@ -61,34 +61,36 @@
                 <p>
                     To use the Angular router, an application needs to have at least two components so that it can navigate from one to the other. To create a component using the CLI, enter the following at the command line where first is the name of your component:
                 </p>
-                <code>ng generate component first</code>
+                <div class="code">
+                    <code>ng generate component first</code>
+                </div>
                 <p>
                     Repeat this step for a second component but give it a different name. Here, the new name is second.
                 </p>
-                <code>ng generate component second</code>
+                <div class="code">
+                    <code>ng generate component second</code>
+                </div>
                 <p>
                     The CLI automatically appends <code>Component</code>, so if you were to write <code>first-component</code>, your component would be <code>FirstComponentComponent</code>
                 </p>
                 <div class="helpful-alert">
-                <h3><code><base href></code></h3>
                 <p>
                     This guide works with a CLI-generated Angular application. If you are working manually, make sure that you have <code><base href="/"></code> in the <code><head></code> of your index.html file. This assumes that the app folder is the application root, and uses <code>"/"</code>.
                 </p>
                 </div>
                     <h3>Importing your new components</h3>
                     <p>
-                        use your new components, import them into AppRoutingModule at the top of the file, as follows:
+                       To use your new components, import them into AppRoutingModule at the top of the file, as follows:
                     </p>
-                <div class="code-card">
+                <div class="code">
                     <code>
-                        AppRoutingModule (excerpt)
-                        content_copy
-                        import { FirstComponent } from './first/first.component';
+                        AppRoutingModule (excerpt) <br>
+                        import { FirstComponent } from './first/first.component';<br>
                         import { SecondComponent } from './second/second.component';
                     </code>
                 </div>
             </section>   
-            <section class="main-section">
+            <section class="main-section" id="Defining_a_basic_route">
                 <header><h3>Defining a basic route</h3></header>
                 <p>
                     There are three fundamental building blocks to creating a route.
@@ -97,32 +99,31 @@
                 </p>
     
                 <h3>CLI AppModule with routing</h3>
-                <code>
-                    import { BrowserModule } from '@angular/platform-browser';
-                    import { NgModule } from '@angular/core';
-                    import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRoutingModule
-                    import { AppComponent } from './app.component';
+                <code class="code">
+                    import { BrowserModule } from '@angular/platform-browser';<br>
+                    import { NgModule } from '@angular/core';<br>
+                    import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRoutingModule<br>
+                    import { AppComponent } from './app.component';<br>
 
-                    @NgModule({
+                    @NgModule({<br>
                         declarations: [
                             AppComponent
-                        ],
+                        ],<br>
                         imports: [
                             BrowserModule,
                             AppRoutingModule // CLI adds AppRoutingModule to the AppModule's imports array
-                        ],
-                        providers: [],
+                        ],<br>
+                        providers: [],<br>
                         bootstrap: [AppComponent]
-                        })
+                        })<br>
                         export class AppModule { }
                 </code>
-    
                     <ol>
                         <li> 
-                            Define your routes in your Routes array.
+                            Define your routes in your Routes array.<br>
                             The Angular CLI performs this step automatically. The CLI also sets up a Routes array for your routes and configures the imports and exports arrays for @NgModule().
-                            <h3>CLI application routing module</h3>                    
-                            <code>
+                            <h4>CLI application routing module</h4>                    
+                            <code class="code">
                                 import { NgModule } from '@angular/core';
                                 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
                 
@@ -137,14 +138,13 @@
                             </code>
                         </li>
                         <li>
-                        Import RouterModule and Routes into your routing module.
-                            Each route in this array is a JavaScript object that contains two properties. The first property, path, defines the URL path for the route. The second property, component, defines the component Angular should use for the corresponding path.
-            
-                            AppRoutingModule (excerpt)
-                            <code>
-                                const routes: Routes = [
-                                { path: 'first-component', component: FirstComponent },
-                                { path: 'second-component', component: SecondComponent },
+                        Import RouterModule and Routes into your routing module.<br>
+                            Each route in this array is a JavaScript object that contains two properties. The first property, path, defines the URL path for the route. The second property, component, defines the component Angular should use for the corresponding path.<br>
+                            <h4>AppRoutingModule (excerpt)</h4>
+                            <code class="code">
+                                const routes: Routes = [<br>
+                                { path: 'first-component', component: FirstComponent },<br>
+                                { path: 'second-component', component: SecondComponent },<br>
                                 ];
                             </code>
                         </li>
@@ -152,8 +152,8 @@
                             Add your routes to your application.
                             Now that you have defined your routes, you can add them to your application. First, add links to the two components. Assign the anchor tag that you want to add the route to the routerLink attribute. Set the value of the attribute to the component to show when a user clicks on each link. Next, update your component template to include <router-outlet>. This element informs Angular to update the application view with the component for the selected route.
                             Template with routerLink and router-outlet
-                            <h1>Angular Router App</h1>
-                            <code>
+                            <h4>Angular Router App</h4>
+                            <code class="code">
                                 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
                                 <nav>
                                     <ul>
@@ -166,91 +166,71 @@
                             </code>
                         </li>
                     </ol>
-                </section>
-                <section class="main-section"></section>
-                <header>Route order</header> 
+            </section>
+            <section class="main-section" id="Route_Order">
+                <header><h3>Route Order</h3></header> 
                 <p>
                     The order of routes is important because the Router uses a first-match wins strategy when matching routes, so more specific routes should be placed above less specific routes. List routes with a static path first, followed by an empty path route, which matches the default route. The wildcard route comes last because it matches every URL and the Router selects it only if no other routes match first.
                 </p> 
-                <section class="main-section">
-                    <header>
-                        Getting route information
-                    </header>
-                        <p>
-                            Often, as a user navigates your application, you want to pass information from one component to another. For example, consider an application that displays a shopping list of grocery items. Each item in the list has a unique id. To edit an item, users click an Edit button, which opens an EditGroceryItem component. You want that component to retrieve the id for the grocery item so it can display the right information to the user.
+            </section>
+            <section class="main-section" id="Getting_route_information">
+                <header><h3>Getting route information</h3></header>
+                    <p>
+                        Often, as a user navigates your application, you want to pass information from one component to another. For example, consider an application that displays a shopping list of grocery items. Each item in the list has a unique id. To edit an item, users click an Edit button, which opens an EditGroceryItem component. You want that component to retrieve the id for the grocery item so it can display the right information to the user.
+                        You can use a route to pass this type of information to your application components. To do so, you use the ActivatedRoute interface.
+                        To get information from a route:
+                    </p>
 
-                            You can use a route to pass this type of information to your application components. To do so, you use the ActivatedRoute interface.
+                    <ol> 
 
-                            To get information from a route:
-                        </p>
-                        <ol>
-                            Import ActivatedRoute and ParamMap to your component.
-                        
-                        In the component class (excerpt)
-                        <code>
-                            <li>
-                                <code>
-                                    import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-                                    These import statements add several important elements that your component needs. To learn more about each, see the following API pages:
-                                </code>
+                        <li>
+                            <p>
+                                Import ActivatedRoute and ParamMap to your component.
+                                In the component class (excerpt)
+                            </p>
+                            <code class="code">
+                                import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+                                These import statements add several important elements that your component needs. To learn more about each, see the following API pages:
+                            </code>
+                            <code class="code">
                                 <ul>
                                     <li>Router</li>
                                     <li>ActivatedRoute</li>
                                     <li>ParamMap</li>
                                 </ul>
-                            </li>
-                            Inject an instance of ActivatedRoute by adding it to your application's constructor:
-
-                            In the component class (excerpt)
-                            content_copy
-                            constructor(
-                            private route: ActivatedRoute,
-                            ) {}
-                            Update the ngOnInit() method to access the ActivatedRoute and track the id parameter:
-
-                            In the component (excerpt)
-                            content_copy
-                            ngOnInit() {
-                            this.route.queryParams.subscribe(params => {
-                                this.name = params['name'];
-                            });
-                            }
-                            Note: The preceding example uses a variable, name, and assigns it the value based on the name parameter.
-                        </code>
-                        </ol>
-                </section>
-                <section>
-                Setting up wildcard routes
-                A well-functioning application should gracefully handle when users attempt to navigate to a part of your application that does not exist. To add this functionality to your application, you set up a wildcard route. The Angular router selects this route any time the requested URL doesn't match any router paths.
-
-                To set up a wildcard route, add the following code to your routes definition.
-
-                AppRoutingModule (excerpt)
-                <code>
+                            </code>
+                        </li>
+                        <li>
+                            <p>Inject an instance of ActivatedRoute by adding it to your application's constructor:</p>
+                                <code class="code">
+                                    In the component class (excerpt)<br>
+                                    content_copy<br>
+                                    constructor(<br>
+                                    private route: ActivatedRoute,<br>
+                                    ) {}<br>
+                                    Update the ngOnInit() method to access the ActivatedRoute and track the id parameter:<br>
+                                    In the component (excerpt)<br>
+                                    ngOnInit() {<br>
+                                    this.route.queryParams.subscribe(params => {<br>
+                                        this.name = params['name'];<br>
+                                    });<br>
+                                    }
+                                </code>
+                            <p>The preceding example uses a variable, name, and assigns it the value based on the name parameter.</p>
+                        </li>
+                    </ol>
+            </section>
+            <section class="main-section" id="Setting_up_wildcard_routes">
+                <header><h3>Setting up wildcard routes</h3></header>
+                <p>
+                    A well-functioning application should gracefully handle when users attempt to navigate to a part of your application that does not exist. To add this functionality to your application, you set up a wildcard route. The Angular router selects this route any time the requested URL doesn't match any router paths.
+                    To set up a wildcard route, add the following code to your routes definition.
+                </p>
+                <code class="code">
+                    AppRoutingModule (excerpt)
                     { path: '**', component:  }
-                    The two asterisks, **, indicate to Angular that this routes definition is a wildcard route. For the component property, you can define any component in your application. Common choices include an application-specific PageNotFoundComponent, which you can define to display a 404 page to your users; or a redirect to your application's main component. A wildcard route is the last route because it matches any URL. For more detail on why order matters for routes, see Route order.
                 </code>
-            </section>
-            </section>
-            <section class="main-section">
-                <header>
-                    
-                </header>
-            </section>
-            <section class="main-section">
-                <header>
-                    
-                </header>
-            </section>
-            <section class="main-section">
-                <header>
-                    
-                </header>
-            </section>
-            <section class="main-section">
-                <header>
-                    
-                </header>
+                <p>The two asterisks, **, indicate to Angular that this routes definition is a wildcard route. For the component property, you can define any component in your application. Common choices include an application-specific PageNotFoundComponent, which you can define to display a 404 page to your users; or a redirect to your application's main component. A wildcard route is the last route because it matches any URL. For more detail on why order matters for routes, see Route order.</p>
             </section>
         </main>
     </div>

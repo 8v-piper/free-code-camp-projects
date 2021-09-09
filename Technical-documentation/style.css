@@ -18,13 +18,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 15rem;
+    width: 17rem;
     height: 100%;
 }
 
 .nav-header{
     display: flex;
-    border-bottom: 0.1rem solid #000000;
+    border-image: linear-gradient(90deg, #ffff, #000, #ffff) 3;
+    border-bottom: 0.1rem solid;
 }
 .nav-header > h1{
     font-weight: 700;
@@ -35,7 +36,7 @@
 }
 
 .icon {
-    width: 4rem;
+    width: 4.5rem;
     float: left;
     margin-left: 1rem;
     align-self: center;
@@ -46,29 +47,52 @@
 }
 
 #navbar li {
+    display: block;
     font-size: 1.2rem;
     margin: 1em 0em;
-    padding-left: 0.4rem;
+    padding: 0.2em 0.4em;
+
+}
+
+#navbar li:hover {
+    padding: 0.2em 0.4em;
+    background-color: #dadada;
+    border-right: 0.15rem solid #2a28bd;
 }
 
 .main-section {
     margin-left: 1.25rem;
+    max-width: 50rem;
 }
 
 .main-section li {
     margin-left: 2rem;
 }
+
 a {
     text-decoration: none;
     color: #4e4e4e;
 }
 
+li {
+    line-height: 1.5rem;
+}
+
+ol {
+    margin: 1rem 0;
+}
 h3 {
     margin: 0.5rem 0rem 0.5rem 1rem;
     margin-left: 0;
     padding: 0.5rem 0rem;
     font-size: 1.3rem;
-    color: red;
+    color: #DD0031;
+}
+
+h4 {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    font-weight: 700;
 }
 
 p { 
@@ -77,12 +101,37 @@ p {
     line-height: 1.5rem;
 }
 
-code {
+.code {
+    display: flex;
+    width: 32rem;
+    margin: 1rem;
+    line-height: 1.5rem;
     font-family: monospace;
-    color: #4e4e4e;
-    text-decoration: underline;
+    background-color: #4e4e4e;
+    color: #ffffff;
+    border-radius: 0.4rem;
 }
 
+.code li a {
+    color: #ffffff;
+}
+
+.code header {
+    background-color: aqua;
+}
+code {
+    align-self: center;
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.helpful-alert{
+    margin: 1.5rem 0rem 1.5rem 1rem;
+    padding: 1.5rem;
+    width: 32rem;
+    background-color: #ebebeb;
+    border-left: 0.5rem solid #2a28bd;
+}
 #main-doc {
     position: absolute;
     margin-left: 16rem;
