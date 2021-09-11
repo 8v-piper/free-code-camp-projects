@@ -1,0 +1,256 @@
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* navigation styling */
+header {
+    background-color: aqua;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+
+#navbar {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: aqua;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 300ms ease-in-out;
+
+}
+#logo {
+    margin: 1em;
+}
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+#navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: opacity 200ms ease-in-out;
+}
+
+#navbar a:hover {
+    color: black;
+}
+
+.nav-toggle { 
+    display: none;
+}
+
+.nav-toggle:checked ~ #navbar {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ #navbar a {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out 200ms;
+}
+
+.nav-toggle-label {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    position: relative;
+    background-color: white;
+    height: 0.2em;
+    width: 2em;
+    border-radius: 2px;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 0.5em;
+}
+
+.nav-toggle-label span::after {
+    top: 0.5em;
+}
+/* navigation media query */
+@media screen and (min-width: 760px){
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(480px, 4fr)  1fr;
+        height: 5em;
+    }
+
+    #logo {
+        grid-column: 2 / 3;
+        display: flex;
+        align-items: center;
+    }
+
+    #navbar {
+        all: unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #navbar ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #navbar li {
+        margin-bottom: 0;
+        padding-right: 0;
+    }
+
+    #navbar a {
+        position: relative;
+        margin-left: 1em;
+        opacity: 1;
+    }
+
+    #navbar a::before {
+        content: '';
+        display: block;
+        height: 3px;
+        background: black;
+        position: absolute;
+        top: 1em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    #navbar a:hover::before {
+        transform: scale(1,1);
+    }
+}
+/* end of navigation media query */
+/* end of navigation */
+
+
+/* welcome section */
+#welcome-section{
+    height: 100vh;
+    top: 0;
+    background-color: blue;
+}
+/* end of welcome section */
+
+.sub-heading h1 {
+    text-align: center;
+}
+
+/* start of projects section */
+
+#projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: blueviolet;
+}
+
+.project-tile {
+    display: grid;
+    grid-template-rows: 18em minmax(1fr, 10em);
+    background-color: white;
+    width: 30em;
+    height: 30em;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: -1px -1px 19px 1px rgba(0,0,0,0.64);
+    -webkit-box-shadow: -1px -1px 19px 1px rgba(0,0,0,0.64);
+    -moz-box-shadow: -1px -1px 19px 1px rgba(0,0,0,0.64);
+    text-align: center;
+}
+
+.project-tile a {
+    text-decoration: none;
+}
+
+.project-image {
+    grid-row: 1 / 2;
+    justify-self: center;
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0;
+}
+
+.project-title {
+    grid-row: 2/3;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    font-size: 1em;
+    color: black;
+}
+
+.code {
+    color: white;
+    transition: color 0.3s ease-out;
+}
+
+.project-title:hover .code {
+    color: black;
+    font-weight: 900;
+    margin: 0.5em;
+}
+
+
+/* end of projects section */
+
+#contact {
+    background-color: green;
+}
+
+#profile-link{
+    display: block;
+    width: 15em;
+    height: 10em;
+    border-radius: 20%;
+    background-image: linear-gradient(90deg rgba(0, 255, 221, 0),rgb(40, 185, 190));
+}
+

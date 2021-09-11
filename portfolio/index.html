@@ -5,9 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <div id="logo">
+            <h1>Logo</h1>
+        </div>
+        <input type="checkbox" name="" id="nav-toggle" class="nav-toggle">
+        <nav id="navbar">
+            <ul>
+                <li><a href="#welcome-section">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>   
+    <section id="welcome-section">     
+        <h1>This is the welcome section</h1>
+        <a  target="blank" href="https://github.com/8v-piper">Github</a>
+    </section>
+    <div class="sub-heading">
+        <h1>This is the project section</h1>
+    </div>
+    <section id="projects">
+        <div class="project-tile">
+            <a href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" alt="project"/>
+                <div class="project-title">
+                    <p><span class="code">&lt;</span>Tribute Page<span class="code">&#47;&gt;</span></p>
+                </div>
+            </a>
+        </div>
+        <div class="project-tile">
+            <a href="https://codepen.io/freeCodeCamp/full/qRZeGZ" target="blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png" alt="project"/>
+                <div class="project-title">
+                    <p><span class="code">&lt;</span>Random Qoute Machine<span class="code">&#47;&gt;</span></p>
+                </div>
+            </a>
+        </div>
+        <div class="project-tile">
+            <a href="https://codepen.io/freeCodeCamp/full/wGqEga" target="blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/wiki.png" alt="project"/>
+                <div class="project-title">
+                    <p><span class="code">&lt;</span>Wikipedia Viewer<span class="code">&#47;&gt;</span></p>
+                </div>
+            </a>
+        </div>
+
+    </section>
+    <div class="sub-heading"><h1>This is the contact section</h1></div>
+    <section id="contact">
+
+        <a
+        id="profile-link"
+        href="https://github.com/8v-piper"
+        target="_blank"
+        class="btn contact-details"
+        ><span>Github</span>
+    </a>
+        <form action="post" method="post">
+            
+        </form>
+    </section>
 </body>
 </html>
