@@ -246,11 +246,19 @@ header {
     background-color: green;
 }
 
-#profile-link{
-    display: block;
-    width: 15em;
-    height: 10em;
-    border-radius: 20%;
-    background-image: linear-gradient(90deg rgba(0, 255, 221, 0),rgb(40, 185, 190));
+.profile-link {
+    text-align: center;
+}
+
+.profile-link img{
+    margin: auto;
+    width: 7em;
+    opacity: 0.3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
 }
 
