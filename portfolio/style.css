@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
 
 *, *::before, *::after{
     box-sizing: border-box;
@@ -8,6 +11,19 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 400;
 }
 
 /* navigation styling */
@@ -170,10 +186,45 @@ header {
 
 
 /* welcome section */
-#welcome-section{
+#welcome-section {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(480px, 4fr)  1fr;
+    grid-template-rows: 5em auto auto auto;
     height: 100vh;
-    top: 0;
-    background-color: blue;
+    background-color: #fff
+}
+
+#welcome-section h1 {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Sacramento';
+    color: blue;
+}
+
+#welcome-section h2 {
+    text-align: center;
+    margin: 1em auto;
+    color: red;
+}
+
+#welcome-section .sub-heading {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    position: relative;
+    justify-self: center;
+    margin: 1em auto;
+    text-align: center;
+    color: turquoise;  
+}
+
+.sub-heading img {
+    margin: 1em auto;
+    padding: 1em;
+    width: 5em;
+
+
 }
 /* end of welcome section */
 
@@ -242,6 +293,8 @@ header {
 
 /* end of projects section */
 
+/* startof contact andlinks section */
+
 #contact {
     background-color: green;
 }
@@ -259,6 +312,67 @@ header {
 form {
     display: flex;
     flex-direction: column;
+    margin: 3em auto;
+    width: 60vw;
+    padding: 3vw;
+    border: 1px solid #ddd;
     border-radius: 1em;
 }
+
+label {
+    margin-bottom: 1em;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+input {
+    width: 100%;
+    padding: 0.75em 0em;
+    margin-top: 1.45em;
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    opacity: 0;
+}
+
+form span {
+    position: absolute;
+    border-radius: 1.8em;
+    top: 0;
+    left: 0;
+    transform: translateY(1.9em);
+    font-size: 0.825em;
+    transition-duration: 300ms;
+
+}
+
+.comment {
+    width: 100%;
+    border:1px solid #ddd;
+    margin-top: 10px;
+}
+
+.comment-span {
+    display: inline-block;
+    position: relative;
+}
+
+.submit {
+    padding: 1em 0em;
+    margin-top: 1.45em;
+    background: purple;
+    color: #fff;
+    border: 1px solid purple;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+label:focus-within > span,
+input:not(:placeholder-shown) + span {
+    color: purple;
+    transform: translateY(0em);
+}
+/* end of contact section */
 
